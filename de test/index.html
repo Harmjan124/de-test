@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>de test</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+
+        <nav>
+            <ul>
+                <li><a  href="">Work</a></li>
+                <li><a  href="">Services</a></li>
+                <li><a  href="">About</a></li>
+                <li><a  href="">Careers</a></li>
+                <li><a  href="">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="clock"></div>
+
+        <div id="text"><h1>Award-winning design studio in Sydney, Australia</h1> <br>
+            <p>Erudito is a design studio that creates beautiful digital products.</p>
+            <p>brands and experiences for amazing companies and disruptive</p>
+            <p> startups. Got something cool for us to work on?</p><br>
+
+    <button>Get in touch</button>
+    <button id="button2">watch our reel</button>
+        </div>
+        <div id="foto"></div>
+
+        <canvas id="groen" width="350" height="200"></canvas>
+        <canvas id="geel" width="250" height="200"></canvas>
+
+        <footer>
+        </footer>
+    </main>
+</body>
+</html>
+
+
+<script>
+    var c = document.getElementById("groen");//dit is het script voor de groene vorm
+    var ctx = c.getContext("2d");
+
+    ctx.font ="30px";
+    ctx.textAlign = "center";
+    ctx.fillText("content" ,10,30);
+    ctx.moveTo(30,0);
+    ctx.quadraticCurveTo(10,200,215,100);
+    ctx.quadraticCurveTo(210,90,335,0);
+    ctx.stroke();
+    ctx.fillStyle = "#60e394";
+    ctx.fill();
+
+
+
+    var v = document.getElementById("geel");//dit is het script voor de gele vorm
+    var vtx = v.getContext("2d");
+
+    vtx.moveTo(0,0);
+    vtx.quadraticCurveTo(250,100,250,200);
+    vtx.lineTo(0,200);
+    vtx.stroke();
+    vtx.fillStyle = "#ffbc00";
+    vtx.fill();
+
+
+
+    function clock() {// dit is het script voor de klok
+        var time = new Date(),
+            hours = time.getHours(),
+            minutes = time.getMinutes(),
+            seconds = time.getSeconds();
+
+        document.querySelectorAll('.clock')[0].innerHTML = harold(hours) + ":" + harold(minutes) + ":" + harold(seconds);
+
+        function harold(standIn) {
+            if (standIn < 10) {
+                standIn = '0' + standIn
+            }
+            return standIn;
+        }
+    }
+    setInterval(clock, 1000);
+
+
+
+</script>
+
+
+
